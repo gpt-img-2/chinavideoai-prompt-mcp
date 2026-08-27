@@ -1,0 +1,64 @@
+{
+  "name": "chinavideoai-prompt-mcp",
+  "version": "1.0.0",
+  "description": "Read-only MCP tools for China AI video prompt construction, reference-aware shot planning, diagnosis, and resource discovery.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "chinavideoai-prompt-mcp": "bin/chinavideoai-prompt-mcp.js"
+  },
+  "files": [
+    "bin/",
+    "dist/",
+    "openclaw/",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "smoke": "node scripts/smoke-mcp-client.mjs",
+    "validate": "pnpm typecheck && pnpm test && pnpm build && pnpm smoke"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "china-ai-video",
+    "ai-video-prompts",
+    "reference-to-video",
+    "shot-planning",
+    "openclaw",
+    "codex",
+    "cursor"
+  ],
+  "author": {
+    "name": "ChinaVideoAI.com",
+    "url": "https://chinavideoai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gpt-img-2/chinavideoai-prompt-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gpt-img-2/chinavideoai-prompt-mcp/issues"
+  },
+  "homepage": "https://chinavideoai.com/china-ai-video-generator",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.0.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.0.0",
+    "@types/node": "^24.3.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}
